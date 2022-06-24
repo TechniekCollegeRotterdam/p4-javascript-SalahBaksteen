@@ -1,31 +1,68 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Tic Tac Toe</title>
+
+    <!-- link my stylesheet -->
+    <link rel="stylesheet" href="style.css">
+
 </head>
-
 <body>
-    <label>
-        name:
-        <input type="text" id="nameChange">
-    </label>
 
-    <label>
-        Country:
-        <select id="countryChange">
-            <option value="nederland">Nederland</option>
-            <option value="belgie">Belgie</option>
-            <option value="duitsland">Duitsland</option>
-        </select>
-    </label>
+   <audio src="/assets/backgroundmusic.mp3"></audio>
+    
+    <!-- start game window -->
+    <div class="start-game">
+        <h1 class="text-light">Selecteer je developer</h1>
+        <div class="profile">
+            <div class="img">
+                <img src="./assets/b1.png" class="id" data-id="x" alt="">
+                <img src="./assets/j1.png" class="id" data-id="y" alt="">
+            </div>
+        </div>
 
-    <p id="output"></p>
+        <button class="primary-btn" id="startBtn">Start Game</button>    
+        <button onclick='window.location.href="settings.html"' class="primary-btn" id="startBtn">Instellingen</button>
 
-    <script src="app.js"></script>
+
+    </div>
+
+    <!-- game board -->
+    <div class="container">
+        <div class="board" id="board">
+            <div class="block" data-cell></div>
+            <div class="block" data-cell></div>
+            <div class="block" data-cell></div>
+            <div class="block" data-cell></div>
+            <div class="block" data-cell></div>
+            <div class="block" data-cell></div>
+            <div class="block" data-cell></div>
+            <div class="block" data-cell></div>
+            <div class="block" data-cell></div>
+        </div>
+    </div>
+
+    <!-- Draw Window -->
+    <div class="draw-msg">
+        <div class="draw">
+            <h1 class="text-center text-yellow">Gelijkspel? kom op nou... loser</h1>
+        </div>
+        <button id="drawBtn" class="primary-btn">Speel opnieuw</button>
+    </div>
+
+    <!-- winner Window -->
+    <div class="winner-msg">
+        <h1 class="text-center text-yellow">Je hebt gewonnen lul</h1>
+        <div class="winner"></div>
+        <button id="restartBtn" class="primary-btn">Speel opnieuw</button>
+    </div>
+
+    
+
+    <script type="module" src="./index.js"></script>
+
 </body>
-
 </html>
